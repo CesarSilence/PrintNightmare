@@ -258,3 +258,16 @@ Suppose your Linux machine has the IP `192.168.1.100` and you wish to serve the 
 ## Credits
 - [@cube0x0](https://github.com/cube0x0)'s [implementation](https://github.com/cube0x0/CVE-2021-1675)
 - [Impacket](https://github.com/SecureAuthCorp/impacket)
+
+
+## Compiling the adduser.c file
+### Using MinGW (tested on macOS, but Linux should work)
+
+- Create a 32-bit EXE file:
+`i686-w64-mingw32-gcc -oadduser32.exe adduser.c -lnetapi32`
+- Create a 32-bit DLL file:
+`i686-w64-mingw32-gcc -shared -oadduser32.dll adduser.c -lnetapi32`
+- Create a 64-bit EXE file:
+`x86_64-w64-mingw32-gcc -oadduser64.exe adduser.c -lnetapi32`
+- Create a 64-bit DLL file:
+`x86_64-w64-mingw32-gcc -shared -oadduser64.dll adduser.c -lnetapi32`
